@@ -1,0 +1,718 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background: #1a1a1a;
+    color: white;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    text-align: center;
+}
+
+.container {
+    /* flex-wrap: wrap; */
+}
+
+.nav-bar {
+    display: flex;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    /* blur krne ke liye */
+    backdrop-filter: blur(12px); 
+    top: 0;
+    z-index: 1000;
+    
+}
+ 
+#menu-icon{
+    font-size: 26px;
+    color: rgb(251, 146, 60);
+    display: none;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-bar li {
+    display: inline;
+}
+
+.nav-bar ul li {
+    padding: 0 20px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: rgb(222, 164, 116);
+    font-weight: 400;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.nav-bar ul li a:hover {
+    color: rgb(251, 146, 60);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav-bar h1 {
+    color: rgb(251, 146, 60);
+    font-weight: 700;
+}
+
+.center {
+    background-image: url("https://media.istockphoto.com/id/1467199060/photo/cup-of-coffee-with-smoke-and-coffee-beans-on-old-wooden-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=YJZXeiAcr9Z-Q837HDy4uzJj7mSA1loVA8xMB5RXcCs=");
+    min-height: 100vh; /* Important: min-height not fixed height */
+    background-size: cover;
+    background-position: center; /* Center the image always */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px; /* thoda sa padding for safe space */
+}
+
+/* Responsive changes */
+@media (max-width: 768px) {
+  .center {
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh; /* chhoti screen pe kam height */
+    padding: 40px 20px;
+  }
+}
+
+
+.center h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: rgb(251, 146, 60);
+}
+
+.center h3 {
+    color: rgb(222, 164, 116);
+    font-size: 20px;
+    font-weight: 400;
+    padding: 20px;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 10px 15px;
+    background-color: rgb(222, 113, 23);
+    outline: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: rgb(189, 97, 21);
+}
+
+/* Page 2 - Innovative Brews Section */
+.second-page {
+    background-color: rgb(31, 41, 55);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .second-page h1 {
+    font-size: 50px;
+    color: rgb(222, 113, 23);
+    margin-bottom: 40px;
+  }
+  
+  .second-page-img {
+    width: 100%;
+    max-width: 1200px; /* ya jitna tumko chahiye */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+  
+  .items-one {
+    background-color: rgb(34, 34, 69);
+    width: 300px;
+    border: 2px solid rgb(222, 113, 23);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .items-one:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(222, 113, 23, 0.4);
+  }
+  
+  .items-one img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .items-one h3 {
+    color: rgb(222, 164, 116);
+    margin: 15px 0 5px;
+    font-size: 22px;
+  }
+  
+  .items-one h4 {
+    color: rgb(86, 86, 173);
+    font-weight: 900;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .items-one p {
+    font-size: 14px;
+    color: rgb(186, 174, 174);
+    margin: 0 20px 20px;
+  }
+  
+  .items-one button {
+    margin: 15px 0 25px;
+    padding: 8px 20px;
+    background-color: rgb(222, 113, 23);
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .items-one button:hover {
+    background-color: rgb(189, 97, 21);
+  }
+  
+  /* Responsive for Mobile */
+  @media (max-width: 768px) {
+    .second-page h1 {
+      font-size: 35px;
+    }
+  
+    .items-one {
+      width: 90%;
+    }
+  
+    .items-one img {
+      height: 200px;
+    }
+  }
+  
+  .Quantum-experience {
+    background-color: rgb(17, 24, 39);
+    padding: 20px 60px;
+}
+
+.Quantum-experience h1 {
+    font-size: 50px;
+    color: rgb(222, 113, 23);
+    padding: 30px 0px;
+    text-align: center;
+}
+
+.quantam-experience-boxes {
+    display: flex;
+    flex-wrap: wrap; /* Allow boxes to wrap */
+    justify-content: center; /* Center boxes */
+    gap: 20px; /* thoda gap clean look ke liye */
+}
+
+.quantam-experience-boxes .Experience-one {
+    background-color: rgb(39, 47, 74);
+    padding: 20px;
+    width: 300px; 
+    margin: 20px;
+    border-radius: 12px;
+    border: 2px solid rgb(222, 113, 23);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Experience-one:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(222, 113, 23, 0.4);
+}
+
+.Experience-one h2 {
+    color: rgb(222, 164, 116);
+    padding: 15px 0;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.Experience-one p {
+    color: rgb(203, 189, 189);
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.third-page-button {
+    font-size: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 40px;
+    margin-bottom: 60px;
+}
+
+/* ✨ Responsive Design */
+@media (max-width: 768px) {
+    .Quantum-experience {
+        padding: 20px 20px; /* kam padding for mobile */
+    }
+
+    .Quantum-experience h1 {
+        font-size: 35px; /* chhota font mobile ke liye */
+    }
+
+    .quantam-experience-boxes {
+        flex-direction: column; /* stack boxes vertically */
+        align-items: center;
+    }
+
+    .quantam-experience-boxes .Experience-one {
+        width: 90%; /* full width on mobile */
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 430px) {
+    .Quantum-experience h1 {
+        font-size: 28px;
+    }
+
+    .Experience-one h2 {
+        font-size: 22px;
+    }
+
+    .Experience-one p {
+        font-size: 16px;
+    }
+}
+
+
+.third-page-button {
+    font-size: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 40px;
+    margin-bottom: 60px;
+    margin-top: 50px;
+}
+
+/* Forth page */
+.our-story {
+    display: flex;
+    background-color: rgb(31, 41, 55);
+    padding: 120px;
+    flex-wrap: wrap; /* Allow wrapping */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.our-story img {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 400px; /* Limit max width */
+    border-radius: 10px;
+}
+
+.our-story-description {
+    padding-left: 40px;
+    flex: 1; /* Allow description to grow */
+    min-width: 300px;
+}
+
+.our-story-description h1 {
+    color: chocolate;
+    font-size: 50px;
+    padding: 25px 0;
+    font-weight: 900;
+}
+
+.our-story-description p {
+    color: rgb(203, 189, 189);
+    padding: 10px 0;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* 🌟 Responsive Media Queries */
+@media (max-width: 768px) {
+    .our-story {
+        flex-direction: column; /* Stack on smaller screens */
+        padding: 60px 20px; /* Reduce padding */
+        text-align: center;
+    }
+
+    .our-story-description {
+        padding-left: 0;
+    }
+
+    .our-story-description h1 {
+        font-size: 35px; /* Slightly smaller heading */
+    }
+
+    .our-story-description p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 430px) {
+    .our-story-description h1 {
+        font-size: 28px;
+    }
+
+    .our-story-description p {
+        font-size: 16px;
+    }
+}
+
+
+/* Reviews */
+.reviews {
+    background-color: rgb(17, 24, 39);
+    padding: 80px 120px;
+}
+
+.reviews h1 {
+    font-size: 50px;
+    color: rgb(222, 113, 23);
+    padding-bottom: 30px;
+}
+
+.review-page {
+    display: flex;
+    flex-wrap: wrap; /* Allow reviews to wrap */
+    justify-content: center; /* Center reviews */
+}
+
+.review-page .reviews-one {
+    background-color: rgb(39, 47, 74);
+    padding: 20px;
+    width: 300px; /* Adjust width for smaller screens */
+    margin: 20px;
+    border-radius: 12px;
+    border: 2px solid rgb(222, 113, 23);
+}
+
+.reviews-one h2 {
+    color: rgb(222, 164, 116);
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+.reviews-one p {
+    color: rgb(203, 189, 189);
+    padding-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Last page */
+.websites {
+    background-color: black;
+    padding: 40px;
+}
+
+.websites h1 {
+    color: chocolate;
+    padding: 20px 0;
+}
+
+.websites .website-link {
+    display: flex;
+    flex-wrap: wrap; /* Allow links to wrap */
+    justify-content: center;
+}
+
+.websites .website-link div {
+    margin: 10px; /* Add margin for spacing */
+}
+
+.websites .website-link p {
+    padding: 0 10px;
+}
+
+.websites p {
+    color: white;
+    padding: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 779px) {
+    .nav-bar {
+      
+        align-items: center; /* Center items */
+    }
+
+    .nav-bar ul {
+       /* Stack links vertically */
+    }
+
+    .second-page-img {
+        flex-direction: column; /* Stack items vertically */
+        padding: 0; /* Remove padding */
+        
+    }
+
+    .items-one {
+        width: 90%; /* Full width on smaller screens */
+        margin: 10px 0; /* Add margin for spacing */
+    }
+
+    .quantam-experience-boxes {
+        flex-direction: column; /* Stack boxes vertically */
+    }
+
+    .our-story {
+        flex-direction: column; /* Stack items vertically */
+        padding: 60px 20px; /* Adjust padding */
+    }
+
+    .our-story img {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .reviews {
+        padding: 40px 20px; /* Adjust padding */
+    }
+
+    .review-page .reviews-one {
+        width: 90%; /* Full width on smaller screens */
+        margin: 10px 0; /* Add margin for spacing */
+    }
+
+    .websites .website-link {
+        flex-direction: column; /* Stack links vertically */
+    }
+}
+
+@media(max-width: 780px){
+#menu-icon{
+    display: block;
+    
+}
+
+.nav-bar ul{
+    position: fixed;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    backdrop-filter: blur(12px); 
+    flex-direction: column;
+    text-align: left;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  
+}
+
+.nav-bar ul li {
+padding: 10px 20px;
+backdrop-filter: blur(12px); 
+}
+
+.nav-bar ul :hover{
+    background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+      backdrop-filter: blur(10px); /* This is the magic blur */
+      -webkit-backdrop-filter: blur(10px); /* For Safari */
+    backdrop-filter: blur(12px); 
+cursor: default;
+}
+.nav-bar ul.active{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+
+}
+}
+
+@media (max-width: 430px) {
+    .second-page {
+      padding: 40px 20px; /* Thoda kam aur equal padding */
+      padding-right: 0px;
+    }
+  
+    .second-page-img {
+      flex-direction: column;
+      padding: 0; /* Ye sahi hai already */
+    }
+  }
+  @media(max-width: 780px) {
+    #menu-icon {
+        display: block; /* Show the menu icon on small screens */
+    }
+
+    .nav-bar ul {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .nav-bar ul li {
+        padding: 10px 20px;
+    }
+
+    .nav-bar ul.active {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .nav-bar ul :hover {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        cursor: default;
+    }
+}
+
+/* Contact Form Container */
+.contact-form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+  
+    margin: 0 auto;
+  
+    box-shadow: 0px 10px 20px rgba(56, 56, 56, 0.5);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    width: 100%;
+}
+
+.contact-form-container h2 {
+    font-size: 36px;
+    color: rgb(251, 146, 60);
+    margin-bottom: 30px;
+    animation: slideInTop 1s ease-out;
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input Fields Styling */
+.input-group input,
+.input-group textarea {
+    width: 50%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: rgb(251, 146, 60);
+    transform: translateY(-5px);
+}
+
+/* Submit Button Styling */
+.submit-btn {
+    padding: 15px 30px;
+    border: none;
+    background-color: rgb(222, 113, 23);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 50%;
+    margin: auto;
+    
+}
+
+.submit-btn:hover {
+    background-color: rgb(189, 97, 21);
+    transform: translateY(-5px);
+}
+
+/* Input Focus Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInTop {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 30px;
+    }
+
+    .contact-form {
+        gap: 15px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 430px) {
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .contact-form {
+        gap: 10px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        font-size: 12px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+    }
+}
