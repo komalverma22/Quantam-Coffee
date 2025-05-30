@@ -4,5 +4,6 @@ console.log(shortCutE1);
 
 menuBar.addEventListener("click",()=>{
     menuBar.classList.toggle("bx-x");
-    shortCutE1.classList.toggle('active')
+    shortCutE1.classList.toggle('active');
+    
 })
