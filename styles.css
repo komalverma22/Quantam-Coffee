@@ -104,7 +104,8 @@ body, html {
 .center > *:not(.dots) {
     position: relative;
     z-index: 1;
-    animation: floatUp 1.5s cubic-bezier(0.4,0,0.2,1);
+    /* Remove floating animation */
+    /* animation: gentleFloat 4s ease-in-out infinite alternate, floatUp 1.5s cubic-bezier(0.4,0,0.2,1); */
 }
 
 .center h1 {
@@ -113,7 +114,7 @@ body, html {
     color: rgb(251, 146, 60);
     letter-spacing: 2px;
     text-shadow: 0 4px 24px rgba(0,0,0,0.18);
-    animation: fadeIn 1.2s cubic-bezier(0.4,0,0.2,1);
+    /* animation: fadeIn 1.2s cubic-bezier(0.4,0,0.2,1); */
 }
 
 .center h3 {
@@ -123,7 +124,7 @@ body, html {
     padding: 20px;
     letter-spacing: 1px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    animation: fadeIn 1.6s cubic-bezier(0.4,0,0.2,1);
+    /* animation: fadeIn 1.6s cubic-bezier(0.4,0,0.2,1); */
 }
 
 .btn {
@@ -178,10 +179,6 @@ body, html {
     100% { transform: translateY(0); }
 }
 
-.center > *:not(.dots) {
-    animation: gentleFloat 4s ease-in-out infinite alternate, floatUp 1.5s cubic-bezier(0.4,0,0.2,1);
-}
-
 /* Animate other sections on scroll (optional, for more effect) */
 section, .second-page, .Quantum-experience, .our-story, .reviews, .websites {
     animation: fadeIn 1.2s cubic-bezier(0.4,0,0.2,1);
@@ -207,6 +204,8 @@ section, .second-page, .Quantum-experience, .our-story, .reviews, .websites {
     padding: 0;
     background-size: cover;
     background-position: center center;
+    object-fit: cover;
+    width: 100%;
   }
 }
 
@@ -778,6 +777,7 @@ section, .second-page, .Quantum-experience, .our-story, .reviews, .websites {
 }
 
 @media (max-width: 430px) {
+
     .contact-form-container {
         padding: 20px;
     }
