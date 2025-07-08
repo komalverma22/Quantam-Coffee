@@ -27,12 +27,15 @@ body, html {
     backdrop-filter: blur(12px); 
     top: 0;
     z-index: 1000;
+    /* More solid background for readability */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15); /* Subtle shadow for separation */
+    border-bottom: 1px solid rgba(251, 146, 60, 0.15); /* Subtle border for finishing */
     
 }
  
 #menu-icon{
     font-size: 26px;
-    color: rgb(251, 146, 60);
+    color: rgba(251, 146, 60, 0.855);
     display: none;
 }
 
@@ -51,7 +54,7 @@ body, html {
 
 .nav-bar ul li a {
     text-decoration: none;
-    color: rgb(222, 164, 116);
+    color: chocolate;
     font-weight: 400;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -70,7 +73,7 @@ body, html {
 
 .center {
     background-image: url("https://media.istockphoto.com/id/1467199060/photo/cup-of-coffee-with-smoke-and-coffee-beans-on-old-wooden-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=YJZXeiAcr9Z-Q837HDy4uzJj7mSA1loVA8xMB5RXcCs=");
-    min-height: 100vh; /* Important: min-height not fixed height */
+    min-height: 94vh; /* Important: min-height not fixed height */
     background-size: cover;
     background-position: center; /* Center the image always */
     background-repeat: no-repeat;
@@ -79,51 +82,132 @@ body, html {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 20px; /* thoda sa padding for safe space */
+    padding: 40px 20px 20px 20px; /* More padding for modern look */
+    margin-top: 60px; /* Ensures image starts below navbar (adjust if navbar height changes) */
+    position: relative;
+    transition: background-image 0.8s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    /* border-radius: 0 0 32px 32px; */
+    overflow: hidden;
+    animation: fadeInDown 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+.center::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, rgba(26,26,26,0.7) 60%, rgba(251,146,60,0.08) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.center > *:not(.dots) {
+    position: relative;
+    z-index: 1;
+    animation: floatUp 1.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.center h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: rgb(251, 146, 60);
+    letter-spacing: 2px;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    animation: fadeIn 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+.center h3 {
+    color: rgb(222, 164, 116);
+    font-size: 24px;
+    font-weight: 700;
+    padding: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    animation: fadeIn 1.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.btn {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: rgb(222, 113, 23);
+    outline: none;
+    color: white;
+    font-weight: 700;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s, transform 0.3s;
+    box-shadow: 0 2px 12px rgba(222, 113, 23, 0.12);
+    animation: popIn 1.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+.btn:hover {
+    background-color: rgb(189, 97, 21);
+    transform: scale(1.07) translateY(-2px);
+    box-shadow: 0 6px 24px rgba(222, 113, 23, 0.18);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Floating animation for .center content */
+@keyframes gentleFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.center > *:not(.dots) {
+    animation: gentleFloat 4s ease-in-out infinite alternate, floatUp 1.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Animate other sections on scroll (optional, for more effect) */
+section, .second-page, .Quantum-experience, .our-story, .reviews, .websites {
+    animation: fadeIn 1.2s cubic-bezier(0.4,0,0.2,1);
 }
 
 /* Responsive changes */
 @media (max-width: 768px) {
   .center {
     background-size: cover;
-    background-position: center;
-    min-height: 70vh; /* chhoti screen pe kam height */
-    padding: 40px 20px;
+    background-position: center center;
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-
-.center h1 {
-    font-size: 60px;
-    font-weight: 700;
-    color: rgb(251, 146, 60);
-}
-
-.center h3 {
-    color: rgb(222, 164, 116);
-    font-size: 20px;
-    font-weight: 400;
-    padding: 20px;
-}
-
-.btn {
-    font-size: 16px;
-    padding: 10px 15px;
-    background-color: rgb(222, 113, 23);
-    outline: none;
-    color: white;
-    font-weight: 600;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: rgb(189, 97, 21);
+@media (max-width: 430px) {
+  .center {
+    min-height: 100vh;
+    padding: 0;
+    background-size: cover;
+    background-position: center center;
+  }
 }
 
 /* Page 2 - Innovative Brews Section */
@@ -141,7 +225,7 @@ body, html {
   
   .second-page-img {
     width: 100%;
-    max-width: 1200px; /* ya jitna tumko chahiye */
+    max-width: 1500px; /* ya jitna tumko chahiye */
     margin: 0 auto; /* Center horizontally */
     padding: 0;
     display: flex;
@@ -153,7 +237,7 @@ body, html {
   
   .items-one {
     background-color: rgb(34, 34, 69);
-    width: 300px;
+    width: 350px;
     border: 2px solid rgb(222, 113, 23);
     border-radius: 10px;
     overflow: hidden;
@@ -187,11 +271,12 @@ body, html {
   .items-one p {
     font-size: 14px;
     color: rgb(186, 174, 174);
-    margin: 0 20px 20px;
+    margin: 0 10px 10px;
   }
   
   .items-one button {
-    margin: 15px 0 25px;
+    /* margin: 15px 0 25px; */
+    margin-bottom: 15px;
     padding: 8px 20px;
     background-color: rgb(222, 113, 23);
     border: none;
@@ -435,13 +520,13 @@ body, html {
 
 /* Last page */
 .websites {
-    background-color: black;
-    padding: 40px;
+    background-color: #000000ad !important;
+    /* padding: 40px; */
 }
 
 .websites h1 {
     color: chocolate;
-    padding: 20px 0;
+    padding-top: 20px;
 }
 
 .websites .website-link {
@@ -459,8 +544,28 @@ body, html {
 }
 
 .websites p {
+    color: #e0e0e0;
+    padding: 20px 0 10px 0;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 700px;
+    letter-spacing: 0.2px;
+}
+
+.websites p a {
     color: white;
-    padding: 20px;
+    /* text-decoration: underline; */
+    font-weight: 500;
+    transition: color 0.3s;
+    word-break: break-all;
+   font-style: none;
+   text-decoration: none;
+}
+
+.websites p a:hover {
+    color: rgb(222, 113, 23);
+    text-decoration: none;
 }
 
 /* Media Queries for Responsiveness */
@@ -475,7 +580,7 @@ body, html {
     }
 
     .second-page-img {
-        flex-direction: column; /* Stack items vertically */
+      /* Stack items vertically */
         padding: 0; /* Remove padding */
         
     }
@@ -519,37 +624,48 @@ body, html {
     
 }
 
-.nav-bar ul{
+.nav-bar {
+    padding: 10px 10px;
+    background: rgba(26, 26, 26, 0.98); /* More solid on mobile for readability */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+.nav-bar ul {
     position: fixed;
-    top: 100%;
-    left: 0%;
+    top: 60px; /* Place menu just below navbar */
+    left: 0;
     width: 100%;
-    backdrop-filter: blur(12px); 
+    backdrop-filter: blur(12px);
     flex-direction: column;
     text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(26, 26, 26, 0.98); /* Solid background for dropdown */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    transition: opacity 0.4s ease, visibility 0.4s ease, top 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.nav-bar ul.active {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-  
+    top: 60px;
+    transition: opacity 0.4s ease, visibility 0.4s ease, top 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
 .nav-bar ul li {
-padding: 10px 20px;
-backdrop-filter: blur(12px); 
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(251, 146, 60, 0.08);
 }
 
-.nav-bar ul :hover{
-    background: rgba(255, 255, 255, 0.1); /* Light transparent background */
-      backdrop-filter: blur(10px); /* This is the magic blur */
-      -webkit-backdrop-filter: blur(10px); /* For Safari */
-    backdrop-filter: blur(12px); 
-cursor: default;
+.nav-bar ul li:last-child {
+    border-bottom: none;
 }
-.nav-bar ul.active{
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
 
+.nav-bar ul :hover {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
 }
 }
 
@@ -560,53 +676,16 @@ cursor: default;
     }
   
     .second-page-img {
-      flex-direction: column;
+      /* flex-direction: column; */
       padding: 0; /* Ye sahi hai already */
     }
   }
-  @media(max-width: 780px) {
-    #menu-icon {
-        display: block; /* Show the menu icon on small screens */
-    }
-
-    .nav-bar ul {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        backdrop-filter: blur(12px);
-        flex-direction: column;
-        text-align: left;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
-    }
-
-    .nav-bar ul li {
-        padding: 10px 20px;
-    }
-
-    .nav-bar ul.active {
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
-    }
-
-    .nav-bar ul :hover {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        cursor: default;
-    }
-}
 
 /* Contact Form Container */
 .contact-form-container {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #000000ad !important;
     padding: 50px;
-  
     margin: 0 auto;
-  
     box-shadow: 0px 10px 20px rgba(56, 56, 56, 0.5);
     text-align: center;
     animation: fadeIn 1s ease-in-out;
@@ -714,5 +793,43 @@ cursor: default;
 
     .submit-btn {
         font-size: 14px;
+    }
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    z-index: 2;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    border: 2px solid rgb(251, 146, 60);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.dot.active {
+    background: rgb(251, 146, 60);
+    transform: scale(1.2);
+    box-shadow: 0 0 8px 2px rgba(251,146,60,0.3);
+}
+
+@media (max-width: 768px) {
+    .dots {
+        gap: 8px;
+        margin-top: 20px;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
     }
 }
